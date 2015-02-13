@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Request>
+	<Access>
+		<Authentication user="gp" password="" />
+	</Access>
+	<RequestContent>
+		<ServiceType>Dcms.HR.Services.IBusinessRegisterService,Dcms.HR.Business.Business
+		</ServiceType>
+		<Method>SaveForESS</Method>
+		<Parameters>
+			<Parameter type="System.String">ESSF21</Parameter>
+			<Parameter type="System.String">201409100001</Parameter>
+			<Parameter type="System.Int32">2</Parameter>
+			<Parameter type="System.String"></Parameter>
+			<Parameter type="System.String">468E6F5E-2817-4944-BB86-45C65DB229E4
+			</Parameter>
+			<Parameter type="System.String">701</Parameter>
+			<Parameter type="System.String">3</Parameter>
+			<Parameter type="System.DateTime">2014-09-29</Parameter>
+			<Parameter type="System.String">08:00</Parameter>
+			<Parameter type="System.DateTime">2014-09-30</Parameter>
+			<Parameter type="System.String">17:06</Parameter>
+			<Parameter type="System.Int32">0</Parameter>
+			<Parameter type="System.String"></Parameter>
+		</Parameters>
+	</RequestContent>
+</Request>

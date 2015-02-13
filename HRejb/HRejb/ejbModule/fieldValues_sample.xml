@@ -1,0 +1,57 @@
+<ESSF17>
+    <ESSXJ001 id="ESSXJ001" dataType="java.lang.String">ESSF17</ESSXJ001>
+    <ESSXJ002 id="ESSXJ002" dataType="java.lang.String">201409190002</ESSXJ002>
+    <ESSXJ003 id="ESSXJ003" dataType="java.lang.String"></ESSXJ003>
+    <ESSXJ004 id="ESSXJ004" dataType="java.lang.String">T0035</ESSXJ004>
+    <ESSXJ005 id="ESSXJ005" dataType="java.lang.String">朱淑芬</ESSXJ005>
+    <ESSXJ006 id="ESSXJ006" dataType="java.lang.String">2014/09/19</ESSXJ006>
+    <ESSXJ007 id="ESSXJ007" dataType="java.lang.String"></ESSXJ007>
+    <ESSXJ008 id="ESSXJ008" dataType="java.lang.String">T0035</ESSXJ008>
+    <ESSXJ009 id="ESSXJ009" dataType="java.lang.String">朱淑芬</ESSXJ009>
+    <ESSXJ010 id="ESSXJ010" dataType="java.lang.String">f76bfc6c-f678-44fd-b6af-a5870524717b</ESSXJ010>
+    <ESSXJ011 id="ESSXJ011" dataType="java.lang.String">0001</ESSXJ011>
+    <ESSXJ012 id="ESSXJ012" dataType="java.lang.String">玉晶光電股份有限公司</ESSXJ012>
+    <ESSXJ013 id="ESSXJ013" dataType="java.lang.String">5e8a8709-99dd-4253-a7aa-5b3d03f76ded</ESSXJ013>
+    <ESSXJ014 id="ESSXJ014" dataType="java.lang.String">T9110</ESSXJ014>
+    <ESSXJ015 id="ESSXJ015" dataType="java.lang.String">人資課</ESSXJ015>
+    <ESSXJ016 id="ESSXJ016" dataType="java.lang.String">e4cf6088-0b5d-450b-ab38-a376d595d299</ESSXJ016>
+    <ESSXJ017 id="ESSXJ017" dataType="java.lang.String">A210</ESSXJ017>
+    <ESSXJ018 id="ESSXJ018" dataType="java.lang.String">課長</ESSXJ018>
+    <ESSXJ019 id="ESSXJ019" dataType="java.lang.String">408</ESSXJ019>
+    <ESSXJ020 id="ESSXJ020" dataType="java.lang.String">01特休假</ESSXJ020>
+    <ESSXJ021 id="ESSXJ021" dataType="java.lang.String">2014/09/05</ESSXJ021>
+    <ESSXJ022 id="ESSXJ022" dataType="java.lang.String">08:00</ESSXJ022>
+    <ESSXJ023 id="ESSXJ023" dataType="java.lang.String">2014/09/05</ESSXJ023>
+    <ESSXJ024 id="ESSXJ024" dataType="java.lang.String">12:00</ESSXJ024>
+    <ESSXJ025 id="ESSXJ025" dataType="java.lang.String">ESSF07G-201409190009私務處理</ESSXJ025>
+    <ESSXJ026 id="ESSXJ026" dataType="java.lang.String">f34ffcd6-1de9-415c-a29b-748e0b963a73</ESSXJ026>
+    <ESSXJ027 id="ESSXJ027" dataType="java.lang.String">T1623</ESSXJ027>
+    <ESSXJ028 id="ESSXJ028" dataType="java.lang.String">張宏梅</ESSXJ028>
+    <COMPANY id="COMPANY" dataType="java.lang.String">AppForm</COMPANY>
+    <CREATOR id="CREATOR" dataType="java.lang.String">T0035</CREATOR>
+    <USR_GROUP id="USR_GROUP" dataType="java.lang.String"></USR_GROUP>
+    <CREATE_DATE id="CREATE_DATE" dataType="java.lang.String">20140919</CREATE_DATE>
+    <MODIFIER id="MODIFIER" dataType="java.lang.String"></MODIFIER>
+    <MODI_DATE id="MODI_DATE" dataType="java.lang.String"></MODI_DATE>
+    <FLAG id="FLAG" dataType="java.lang.String">1</FLAG>
+    <ESSXJ029 id="ESSXJ029" dataType="java.lang.String">14</ESSXJ029>
+    <PL_RowType id="PL_RowType" dataType="java.lang.String">Add</PL_RowType>
+    <d01 id="d01">
+        <records>
+            <record id="d01_1">
+                <item id="ESSXJD001" dataType="java.lang.String">ESSF17</item>
+                <item id="ESSXJD002" dataType="java.lang.String">201409190002</item>
+                <item id="ESSXJD003" dataType="java.lang.String">0001</item>
+                <item id="ESSXJD004" dataType="java.lang.String">fceca8ab-b3ce-4478-8819-0e2571b91b58</item>
+                <item id="ESSXJD005" dataType="java.lang.String">01特休假</item>
+                <item id="ESSXJD006" dataType="java.lang.String">2014/9/5</item>
+                <item id="ESSXJD007" dataType="java.lang.String">08:00</item>
+                <item id="ESSXJD008" dataType="java.lang.String">2014/9/5</item>
+                <item id="ESSXJD009" dataType="java.lang.String">12:00</item>
+                <item id="ESSXJD010" dataType="java.lang.String">4.00000000</item>
+                <item id="ESSXJD011" dataType="java.lang.String">小時</item>
+                <item id="PL_RowType" dataType="java.lang.String">Add</item>
+            </record>
+        </records>
+    </d01>
+</ESSF17>

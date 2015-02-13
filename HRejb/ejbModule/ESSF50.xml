@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ESSF50>
+        <ESSBCBG001 id="ESSBCBG001" dataType="java.lang.String">ESSF50</ESSBCBG001>
+        <ESSBCBG002 id="ESSBCBG002" dataType="java.lang.String">201410150001</ESSBCBG002>
+        <ESSBCBG003 id="ESSBCBG003" dataType="java.lang.String"/>
+        <ESSBCBG004 id="ESSBCBG004" dataType="java.lang.String">T1013</ESSBCBG004>
+        <ESSBCBG005 id="ESSBCBG005" dataType="java.lang.String">鄭瑞妮</ESSBCBG005>
+        <ESSBCBG006 id="ESSBCBG006" dataType="java.lang.String">f76bfc6c-f678-44fd-b6af-a5870524717b</ESSBCBG006>
+        <ESSBCBG007 id="ESSBCBG007" dataType="java.lang.String">0001</ESSBCBG007>
+        <ESSBCBG008 id="ESSBCBG008" dataType="java.lang.String">玉晶光電股份有限公司</ESSBCBG008>
+        <ESSBCBG009 id="ESSBCBG009" dataType="java.lang.String">28b02fad-bf35-4ed1-bf4f-0e31a5bca36e</ESSBCBG009>
+        <ESSBCBG010 id="ESSBCBG010" dataType="java.lang.String">T1210</ESSBCBG010>
+        <ESSBCBG011 id="ESSBCBG011" dataType="java.lang.String">系統發展部</ESSBCBG011>
+        <ESSBCBG012 id="ESSBCBG012" dataType="java.lang.String">40a89377-8beb-4cfc-9442-2f14648b39d4</ESSBCBG012>
+        <ESSBCBG013 id="ESSBCBG013" dataType="java.lang.String">A310</ESSBCBG013>
+        <ESSBCBG014 id="ESSBCBG014" dataType="java.lang.String">襄理</ESSBCBG014>
+        <ESSBCBG015 id="ESSBCBG015" dataType="java.lang.String">2014/10/15</ESSBCBG015>
+        <ESSBCBG016 id="ESSBCBG016" dataType="java.lang.String">2014/10/15</ESSBCBG016>
+        <ESSBCBG017 id="ESSBCBG017" dataType="java.lang.String">2014/10/15</ESSBCBG017>
+        <ESSBCBG018 id="ESSBCBG018" dataType="java.lang.String">924c1ba7e9f947aca615b2134e344831</ESSBCBG018>
+        <ESSBCBG019 id="ESSBCBG019" dataType="java.lang.String">0002</ESSBCBG019>
+        <ESSBCBG020 id="ESSBCBG020" dataType="java.lang.String">D1200</ESSBCBG020>
+        <ESSBCBG021 id="ESSBCBG021" dataType="java.lang.String">f76bfc6c-f678-44fd-b6af-a5870524717b</ESSBCBG021>
+        <ESSBCBG022 id="ESSBCBG022" dataType="java.lang.String">0001</ESSBCBG022>
+        <ESSBCBG023 id="ESSBCBG023" dataType="java.lang.String">玉晶光電股份有限公司</ESSBCBG023>
+        <ESSBCBG024 id="ESSBCBG024" dataType="java.lang.String">8ff761c6-5fa0-4097-af21-f55ab66e7dd0</ESSBCBG024>
+        <ESSBCBG025 id="ESSBCBG025" dataType="java.lang.String">0001</ESSBCBG025>
+        <ESSBCBG026 id="ESSBCBG026" dataType="java.lang.String">輪班資料</ESSBCBG026>
+        <ESSBCBG027 id="ESSBCBG027" dataType="java.lang.String">true</ESSBCBG027>
+        <ESSBCBG028 id="ESSBCBG028" dataType="java.lang.String">123</ESSBCBG028>
+        <ESSBCBG029 id="ESSBCBG029" dataType="java.lang.String">8b23d96f-1968-427e-9fe5-3a24e0867e51</ESSBCBG029>
+        <ESSBCBG030 id="ESSBCBG030" dataType="java.lang.String">T0743</ESSBCBG030>
+        <ESSBCBG031 id="ESSBCBG031" dataType="java.lang.String">蕭友智</ESSBCBG031>
+        <COMPANY id="COMPANY" dataType="java.lang.String">AppForm</COMPANY>
+        <CREATOR id="CREATOR" dataType="java.lang.String">T1013</CREATOR>
+        <USR_GROUP id="USR_GROUP" dataType="java.lang.String"/>
+        <CREATE_DATE id="CREATE_DATE" dataType="java.lang.String">20141015</CREATE_DATE>
+        <MODIFIER id="MODIFIER" dataType="java.lang.String"/>
+        <MODI_DATE id="MODI_DATE" dataType="java.lang.String"/>
+        <FLAG id="FLAG" dataType="java.lang.String">1</FLAG>
+        <PL_RowType id="PL_RowType" dataType="java.lang.String">Add</PL_RowType>
+        <d01 id="d01">
+            <records>
+                <record id="d01_1">
+                    <item id="ESSBGRY001" dataType="java.lang.String">ESSF50</item>
+                    <item id="ESSBGRY002" dataType="java.lang.String">201410150001</item>
+                    <item id="ESSBGRY003" dataType="java.lang.String">0001</item>
+                    <item id="ESSBGRY004" dataType="java.lang.String">4c2650df-c969-480b-b9b5-c819e1f4fbaa</item>
+                    <item id="ESSBGRY005" dataType="java.lang.String">T0127</item>
+                    <item id="ESSBGRY006" dataType="java.lang.String">沈啟煌</item>
+                    <item id="ESSBGRY007" dataType="java.lang.String">f76bfc6c-f678-44fd-b6af-a5870524717b</item>
+                    <item id="ESSBGRY008" dataType="java.lang.String">0001</item>
+                    <item id="ESSBGRY009" dataType="java.lang.String">GSEO</item>
+                    <item id="ESSBGRY010" dataType="java.lang.String">28b02fad-bf35-4ed1-bf4f-0e31a5bca36e</item>
+                    <item id="ESSBGRY011" dataType="java.lang.String">T1210</item>
+                    <item id="ESSBGRY012" dataType="java.lang.String">系統發展部</item>
+                    <item id="ESSBGRY013" dataType="java.lang.String">49eac407-566e-48e9-bb9b-5440813c8a03</item>
+                    <item id="ESSBGRY014" dataType="java.lang.String">B230</item>
+                    <item id="ESSBGRY015" dataType="java.lang.String">工程師</item>
+                    <item id="PL_RowType" dataType="java.lang.String">Add</item>
+                </record>
+                <record id="d01_2">
+                    <item id="ESSBGRY001" dataType="java.lang.String">ESSF50</item>
+                    <item id="ESSBGRY002" dataType="java.lang.String">201410150001</item>
+                    <item id="ESSBGRY003" dataType="java.lang.String">0001</item>
+                    <item id="ESSBGRY004" dataType="java.lang.String">4c2650df-c969-480b-b9b5-c819e1f4fbaa</item>
+                    <item id="ESSBGRY005" dataType="java.lang.String">T0128</item>
+                    <item id="ESSBGRY006" dataType="java.lang.String">沈啟煌</item>
+                    <item id="ESSBGRY007" dataType="java.lang.String">f76bfc6c-f678-44fd-b6af-a5870524717b</item>
+                    <item id="ESSBGRY008" dataType="java.lang.String">0001</item>
+                    <item id="ESSBGRY009" dataType="java.lang.String">GSEO</item>
+                    <item id="ESSBGRY010" dataType="java.lang.String">28b02fad-bf35-4ed1-bf4f-0e31a5bca36e</item>
+                    <item id="ESSBGRY011" dataType="java.lang.String">T1210</item>
+                    <item id="ESSBGRY012" dataType="java.lang.String">系統發展部</item>
+                    <item id="ESSBGRY013" dataType="java.lang.String">49eac407-566e-48e9-bb9b-5440813c8a03</item>
+                    <item id="ESSBGRY014" dataType="java.lang.String">B230</item>
+                    <item id="ESSBGRY015" dataType="java.lang.String">工程師</item>
+                    <item id="PL_RowType" dataType="java.lang.String">Add</item>
+                </record>
+            </records>
+        </d01>
+    <Level1LeaderCode id="Level1LeaderCode" dataType="java.lang.String">T0743</Level1LeaderCode></ESSF50>

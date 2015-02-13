@@ -1,0 +1,21 @@
+<Request>
+	<Access>
+		<Authentication user="gp" password="" />
+	</Access>
+	<RequestContent>
+		<ServiceType>Dcms.HR.Services.IBusinessRegisterService,Dcms.HR.Business.Business
+		</ServiceType>
+		<Method>AuditForESS</Method>
+		<Parameters>
+			<Parameter type="System.String">ESSF21</Parameter>
+			<Parameter type="System.String">201410130011</Parameter>
+			<Parameter type="System.String">
+			</Parameter>
+			<Parameter type="System.String">
+			</Parameter>
+			<Parameter type="System.String">T1863
+			</Parameter>
+			<Parameter type="System.Int32">1</Parameter>
+		</Parameters>
+	</RequestContent>
+</Request>
