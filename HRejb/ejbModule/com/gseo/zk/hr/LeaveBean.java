@@ -633,23 +633,31 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 * @return FormInstance  this object appends some new tag with 
 	 * <pre>{@code
 	 * <Assistant id="Assistant" dataType="java.lang.String">T0001;T0002</Assistant>
+	 * <DeputyEmployeeId id="DeputyEmployeeId" dataType="java.lang.String">1</DeputyEmployeeId>
 	 * }</pre>
 	 */
 	public FormInstance retrieveAssistant(String pDataSource, FormInstance formInstance) {
 		String eid = formInstance.fetchFieldValue("ESSQJ008");//employee Id
+		String deputyEid = formInstance.fetchFieldValue("ESSQJ031");//deputy employee Id
 		if(pDataSource == null || pDataSource.equals("")){
 			throw new IllegalArgumentException("pDataSource cannot be empty !");
 		}
 		if(eid.equals("")){
 			throw new IllegalArgumentException("ESSQJ008 cannot be empty !");
 		}
+		if(deputyEid.equals("")){
+			throw new IllegalArgumentException("ESSQJ031 cannot be empty !");
+		}
 		_log.debug("pDataSource: " + pDataSource);
 		_log.debug("ESSQJ008: " + eid); 
+		_log.debug("ESSQJ031: " + deputyEid); 
 
 		Document doc = new XML(_log).getXMLDoc(formInstance.getFieldValues());
 		
 		String assis = retrieveAssistant(pDataSource, eid);
+		String deputy = retrieveDeputy(pDataSource, deputyEid);
 		doc.getRootElement().addElement("Assistant").addAttribute("id", "Assistant").addAttribute("dataType", "java.lang.String").setText(assis);
+		doc.getRootElement().addElement("DeputyEmployeeId").addAttribute("id", "DeputyEmployeeId").addAttribute("dataType", "java.lang.String").setText(deputy);
 		
 		_log.debug("return fieldValues: " + doc.asXML());
 		formInstance.setFieldValues(doc.asXML());
@@ -692,6 +700,44 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 			_db.releaseConn(conn);
 		}
 		return assis;
+	}
+	
+	/** 
+	 * Retrieve deputy
+	 * <!-- begin-xdoclet-definition --> 
+	 * @ejb.interface-method view-type="remote"
+	 * <!-- end-xdoclet-definition --> 
+	 * @generated
+	 * 
+	 * @param pDataSource  ex:HRMDS
+	 * @param empId   Employee ID
+	 * @return count   a string likes 0
+	 */
+	public String retrieveDeputy(String pDataSource, String empId) {
+		if(pDataSource == null || pDataSource.equals("")){
+			throw new IllegalArgumentException("pDataSource cannot be empty !");
+		}
+		if(empId == null || empId.equals("")){
+			throw new IllegalArgumentException("Employee ID cannot be empty !");
+		}
+		_log.debug("pDataSource: " + pDataSource);
+		_log.debug("empId: " + empId); 
+
+		String deputyCnt = "";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = _db.getJndiDataSource(pDataSource).getConnection();
+			deputyCnt = this.getDeputyFromHRM(conn, empId);
+		}catch (SQLException e){
+			LogUtil.logError(_log, "Query DB fail.ErrMsg: " + e.getMessage());
+			throw new EJBException(e.getMessage());
+		}finally{
+			// Release DataSource to avoid EJB crash
+			_db.releasePrepareStatement(ps);
+			_db.releaseConn(conn);
+		}
+		return deputyCnt;
 	}
 	
 
@@ -1113,6 +1159,33 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 			return assis2;
 		else
 			return "0";
+	}
+	
+	/**
+	 * Get the deputy count from Employee ID
+	 * @param conn   Connection
+	 * @param eid   employee ID
+	 * @return count of deputy
+	 * @throws SQLException
+	 */
+	private String getDeputyFromHRM(Connection conn, String eid) throws SQLException {
+		String cnt = "";
+		PreparedStatement ps = null;
+		try{
+			ResultSet rs;
+			ps = conn.prepareStatement("select count(*) as cnt from users where id='"+ eid +"' and leaveDate is null ");
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				cnt = rs.getString("cnt") == null?"":rs.getString("cnt");
+			}
+		}catch (SQLException e){
+			LogUtil.logError(_log, "Query DB fail.ErrMsg: " + e.getMessage());
+			throw new EJBException(e.getMessage());
+		}finally{
+			_db.releasePrepareStatement(ps);
+		}
+		
+		return cnt;
 	}
 	
 	/**
