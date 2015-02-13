@@ -367,9 +367,9 @@ public abstract class ForgotClockInBean implements javax.ejb.SessionBean {
 				if(i == 0)
 					param.setText(srcRoot.element("employeeId_shenQingRen").getText());
 				if(i == 1)
-					param.setText(srcRoot.element("StartDate_dlgi").getText());
+					param.setText(srcRoot.element("StartDate").getText());
 				if(i == 2)
-					param.setText(srcRoot.element("EndDate_dlgi").getText());
+					param.setText(srcRoot.element("EndDate").getText());
 				if(i == 3)
 					param.setText(srcRoot.element("shangBan_time").getText()+","+srcRoot.element("xiaBan_time").getText()+",,,,");
 				if(i == 4)
