@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="zhrejbEAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="HRejb.jar" deploy-path="/" handle="module:/resource/HRejb/HRejb">
+            <dependent-object>EjbModule_1412834051401</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="WebServiceejb.jar" deploy-path="/" handle="module:/resource/WebServiceejb/WebServiceejb">
+            <dependent-object>EjbModule_1412834443435</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zhrejbEAR.ear" deploy-path="/" handle="module:/resource/zhrejbEAR/zhrejbEAR">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
