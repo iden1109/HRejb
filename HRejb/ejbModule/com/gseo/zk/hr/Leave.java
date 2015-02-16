@@ -23,7 +23,7 @@ public interface Leave
     * @generated 
     * @param pDataSource ex:NaNaDS
     * @param pFormInstance provide the value of "ESSQJ008" and "ESSQJ014"
-    * @return FormInstance this object appends some new tag with <pre>{@code <LevelName id="LevelName" dataType="java.lang.Integer">12</LevelName> <isManager id="isManager" dataType="java.lang.String">N</isManager> <EmployeeType id="EmployeeType" dataType="java.lang.String">Responsibility</EmployeeType> <Level1LeaderCode id="Level1LeaderCode" dataType="java.lang.String">T0001</Level1LeaderCode> <Level2LeaderCode id="Level2LeaderCode" dataType="java.lang.String">T0002</Level2LeaderCode> }</pre>    */
+    * @return FormInstance this object appends some new tag with <pre>{@code <LevelName id="LevelName" dataType="java.lang.Integer">12</LevelName> <isManager id="isManager" dataType="java.lang.String">N</isManager> <EmployeeType id="EmployeeType" dataType="java.lang.String">Responsibility</EmployeeType> <Level1LeaderCode id="Level1LeaderCode" dataType="java.lang.String">T0001</Level1LeaderCode> <Level2LeaderCode id="Level2LeaderCode" dataType="java.lang.String">T0002</Level2LeaderCode> <DeputyEmployeeId id="DeputyEmployeeId" dataType="java.lang.String">1</DeputyEmployeeId> }</pre>    */
    public com.dsc.nana.domain.form.FormInstance retrieveLevelName( java.lang.String pDataSource,com.dsc.nana.domain.form.FormInstance formInstance )
       throws java.rmi.RemoteException;
 
@@ -105,7 +105,7 @@ public interface Leave
     * @generated 
     * @param pDataSource ex:HRMDS
     * @param pFormInstance provide the value of "ESSQJ008"
-    * @return FormInstance this object appends some new tag with <pre>{@code <Assistant id="Assistant" dataType="java.lang.String">T0001;T0002</Assistant> <DeputyEmployeeId id="DeputyEmployeeId" dataType="java.lang.String">1</DeputyEmployeeId> }</pre>    */
+    * @return FormInstance this object appends some new tag with <pre>{@code <Assistant id="Assistant" dataType="java.lang.String">T0001;T0002</Assistant> }</pre>    */
    public com.dsc.nana.domain.form.FormInstance retrieveAssistant( java.lang.String pDataSource,com.dsc.nana.domain.form.FormInstance formInstance )
       throws java.rmi.RemoteException;
 
@@ -116,15 +116,6 @@ public interface Leave
     * @param empId Employee ID
     * @return assistants a string likes T0001;T0002    */
    public java.lang.String retrieveAssistant( java.lang.String pDataSource,java.lang.String empId )
-      throws java.rmi.RemoteException;
-
-   /**
-    * Retrieve deputy <!-- begin-xdoclet-definition -->
-    * @generated 
-    * @param pDataSource ex:HRMDS
-    * @param empId Employee ID
-    * @return count a string likes 0    */
-   public java.lang.String retrieveDeputy( java.lang.String pDataSource,java.lang.String empId )
       throws java.rmi.RemoteException;
 
 }

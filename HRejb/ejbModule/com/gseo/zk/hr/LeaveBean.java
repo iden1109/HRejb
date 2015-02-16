@@ -112,6 +112,7 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 * <EmployeeType id="EmployeeType" dataType="java.lang.String">Responsibility</EmployeeType>
 	 * <Level1LeaderCode id="Level1LeaderCode" dataType="java.lang.String">T0001</Level1LeaderCode>
 	 * <Level2LeaderCode id="Level2LeaderCode" dataType="java.lang.String">T0002</Level2LeaderCode>
+	 * <DeputyEmployeeId id="DeputyEmployeeId" dataType="java.lang.String">1</DeputyEmployeeId>
 	 * }</pre>
 	 */
 	public FormInstance retrieveLevelName(String pDataSource, FormInstance formInstance) {
@@ -124,11 +125,16 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 		if(formInstance.fetchFieldValue("ESSQJ014").equals("")){
 			throw new IllegalArgumentException("ESSQJ014 cannot be empty !");
 		}
+		if(formInstance.fetchFieldValue("ESSQJ031").equals("")){
+			throw new IllegalArgumentException("ESSQJ031 cannot be empty !");
+		}
 		String eid = formInstance.fetchFieldValue("ESSQJ008");//employee Id
 		String oid = formInstance.fetchFieldValue("ESSQJ014");//depetment Id
+		String deputyEid = formInstance.fetchFieldValue("ESSQJ031");//deputy employee Id
 		_log.debug("pDataSource: " + pDataSource);
 		_log.debug("ESSQJ008: " + eid); 
 		_log.debug("ESSQJ014: " + oid);
+		_log.debug("ESSQJ031: " + deputyEid);
 		
 		Document doc = new XML(_log).getXMLDoc(formInstance.getFieldValues());
 		
@@ -153,6 +159,10 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 			Map leader = getLeaderCodefromAAMS(eid);
 			doc.getRootElement().addElement("Level1LeaderCode").addAttribute("id", "Level1LeaderCode").addAttribute("dataType", "java.lang.String").setText((String)leader.get(LeaveBean.LEVEL1_LEADER));
 			doc.getRootElement().addElement("Level2LeaderCode").addAttribute("id", "Level2LeaderCode").addAttribute("dataType", "java.lang.String").setText((String)leader.get(LeaveBean.LEVEL2_LEADER));
+			
+			// Get deputy
+			String deputy = getDeputy(conn, deputyEid);
+			doc.getRootElement().addElement("DeputyEmployeeId").addAttribute("id", "DeputyEmployeeId").addAttribute("dataType", "java.lang.String").setText(deputy);
 			
 		}catch (SQLException e){
 			LogUtil.logError(_log, "Query DB fail.ErrMsg: " + e.getMessage());
@@ -209,7 +219,7 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 			empType = getEmployeeTypefromAAMS(eid);
 			// Get leader code
 			leader = getLeaderCodefromAAMS(eid);
-			
+
 		}catch (SQLException e){
 			LogUtil.logError(_log, "Query DB fail.ErrMsg: " + e.getMessage());
 			throw new EJBException(e.getMessage());
@@ -633,32 +643,25 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 * @return FormInstance  this object appends some new tag with 
 	 * <pre>{@code
 	 * <Assistant id="Assistant" dataType="java.lang.String">T0001;T0002</Assistant>
-	 * <DeputyEmployeeId id="DeputyEmployeeId" dataType="java.lang.String">1</DeputyEmployeeId>
 	 * }</pre>
 	 */
 	public FormInstance retrieveAssistant(String pDataSource, FormInstance formInstance) {
 		String eid = formInstance.fetchFieldValue("ESSQJ008");//employee Id
-		String deputyEid = formInstance.fetchFieldValue("ESSQJ031");//deputy employee Id
+		
 		if(pDataSource == null || pDataSource.equals("")){
 			throw new IllegalArgumentException("pDataSource cannot be empty !");
 		}
 		if(eid.equals("")){
 			throw new IllegalArgumentException("ESSQJ008 cannot be empty !");
 		}
-		if(deputyEid.equals("")){
-			throw new IllegalArgumentException("ESSQJ031 cannot be empty !");
-		}
 		_log.debug("pDataSource: " + pDataSource);
 		_log.debug("ESSQJ008: " + eid); 
-		_log.debug("ESSQJ031: " + deputyEid); 
 
 		Document doc = new XML(_log).getXMLDoc(formInstance.getFieldValues());
 		
 		String assis = retrieveAssistant(pDataSource, eid);
-		String deputy = retrieveDeputy(pDataSource, deputyEid);
 		doc.getRootElement().addElement("Assistant").addAttribute("id", "Assistant").addAttribute("dataType", "java.lang.String").setText(assis);
-		doc.getRootElement().addElement("DeputyEmployeeId").addAttribute("id", "DeputyEmployeeId").addAttribute("dataType", "java.lang.String").setText(deputy);
-		
+
 		_log.debug("return fieldValues: " + doc.asXML());
 		formInstance.setFieldValues(doc.asXML());
 		return formInstance;
@@ -701,45 +704,7 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 		}
 		return assis;
 	}
-	
-	/** 
-	 * Retrieve deputy
-	 * <!-- begin-xdoclet-definition --> 
-	 * @ejb.interface-method view-type="remote"
-	 * <!-- end-xdoclet-definition --> 
-	 * @generated
-	 * 
-	 * @param pDataSource  ex:HRMDS
-	 * @param empId   Employee ID
-	 * @return count   a string likes 0
-	 */
-	public String retrieveDeputy(String pDataSource, String empId) {
-		if(pDataSource == null || pDataSource.equals("")){
-			throw new IllegalArgumentException("pDataSource cannot be empty !");
-		}
-		if(empId == null || empId.equals("")){
-			throw new IllegalArgumentException("Employee ID cannot be empty !");
-		}
-		_log.debug("pDataSource: " + pDataSource);
-		_log.debug("empId: " + empId); 
 
-		String deputyCnt = "";
-		Connection conn = null;
-		PreparedStatement ps = null;
-		try {
-			conn = _db.getJndiDataSource(pDataSource).getConnection();
-			deputyCnt = this.getDeputyFromHRM(conn, empId);
-		}catch (SQLException e){
-			LogUtil.logError(_log, "Query DB fail.ErrMsg: " + e.getMessage());
-			throw new EJBException(e.getMessage());
-		}finally{
-			// Release DataSource to avoid EJB crash
-			_db.releasePrepareStatement(ps);
-			_db.releaseConn(conn);
-		}
-		return deputyCnt;
-	}
-	
 
 	/* (non-Javadoc)
 	 * @see javax.ejb.SessionBean#ejbActivate()
@@ -1168,7 +1133,7 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 * @return count of deputy
 	 * @throws SQLException
 	 */
-	private String getDeputyFromHRM(Connection conn, String eid) throws SQLException {
+	private String getDeputy(Connection conn, String eid) throws SQLException {
 		String cnt = "";
 		PreparedStatement ps = null;
 		try{
