@@ -82,7 +82,8 @@ public class LeaveBeanUnitTest {
 	public void testRetrieveForOvertime() {
 		try {
 			Document doc = getXMLString("ejbModule/ESSF04G_ForOverTime.xml");
-			OverTime ot = bean.retrieveForOvertime("NaNaDS", doc.asXML(), "APPFORMPROCESSPKG_ESSF04G00000064");
+			//OverTime ot = bean.retrieveForOvertime("NaNaDS", doc.asXML(), "APPFORMPROCESSPKG_ESSF04G00000064");
+			OverTime ot = bean.retrieveForOvertime("NaNaDS", doc.asXML());
 			String result = "<"+ot.getLevelValue()+"><"+ot.getLevel1LeaderCode()+"><"+ot.getLevel2LeaderCode()+"><"+"><"+ot.getDirInDir()+"><"+ot.getDeptDescribe()+"><"+ot.getDirectLeaderCodes()+"><"+ot.getOvertimeName()+"><"+ot.getOvertimeHours()+"><"+ot.getOvertimeReason()+">";
 			assertEquals("Test testRetrieveForOvertime() success", "<10000><T0557><T0278><><直接><課級部門><T0278;T0359;T0557;T0629><高志濠..><2.0..><8784新模配件整理..>", result);
 		} catch (RemoteException e) {

@@ -386,7 +386,6 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 * 
 	 * 
 	 * @param pDataSource  ex:NaNaDS
-	 * @param processSerialNumber
 	 * @param pFormInstance  the DOM object contains ESSJBNXX005 tag
 	 * @return FormInstance  this object appends some new tag with 
 	 * <pre>{@code
@@ -402,19 +401,16 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 * <ESSJBN015 id="ESSJBN015" dataType="java.lang.String">John, 0.5hrs, Reason:reason1</ESSJBN015>
 	 * }</pre>
 	 */
-	public FormInstance retrieveForOvertime(String pDataSource, String processSerialNumber, FormInstance formInstance) {
+	public FormInstance retrieveForOvertime(String pDataSource, FormInstance formInstance) {
 		if(pDataSource == null || pDataSource.equals("")){
 			throw new IllegalArgumentException("pDataSource cannot be empty !");
 		}
-		if(processSerialNumber == null || processSerialNumber.equals("")){
-			throw new IllegalArgumentException("processSerialNumber cannot be empty !");
-		}
 		_log.debug("pDataSource: " + pDataSource);
-		_log.debug("processSerialNumber: " + processSerialNumber);
 
-		XML xml = new XML(_log);
-		Document doc = xml.getXMLDoc(xml.Big5toUTF8(formInstance.getFieldValues()));
-		OverTime ot = retrieveForOvertime(pDataSource, doc.asXML(), processSerialNumber);
+		Document doc = new XML(_log).getXMLDoc(formInstance.getFieldValues());
+		//XML xml = new XML(_log);
+		//Document doc = xml.getXMLDoc(xml.Big5toUTF8(formInstance.getFieldValues()));
+		OverTime ot = retrieveForOvertime(pDataSource, doc.asXML());
 		
 		// for level value of leaders group
 		doc.getRootElement().addElement("LevelValue").addAttribute("id", "LevelValue").addAttribute("dataType", "java.lang.String").setText(ot.getLevelValue());
@@ -453,10 +449,9 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 *
 	 * @param pDataSource  ex:NaNaDS
 	 * @param xml
-	 * @param processSerialNumber
 	 * @return OverTime
 	 */
-	public OverTime retrieveForOvertime(String pDataSource, String xml, String processSerialNumber) {
+	public OverTime retrieveForOvertime(String pDataSource, String xml) {
 		if(pDataSource == null || pDataSource.equals("")){
 			throw new IllegalArgumentException("pDataSource cannot be empty !");
 		}
@@ -520,13 +515,13 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 			ot.setOvertimeReason("");
 			ot.setOvertimeNameHrsReason("");
 		}
-		
+		/*
 		// Update the process title
 		String subject = "";
 		if(!ot.getOvertimeNameHrsReason().equals(""))
 			subject = ot.OVERTIME_APPLICANT+"("+ot.getOvertimeNameHrsReason()+")";
 		updateProcessInstancebySerialNumberfromNANA(pDataSource, subject, processSerialNumber);
-		
+		*/
 		return ot;
 	}
 	

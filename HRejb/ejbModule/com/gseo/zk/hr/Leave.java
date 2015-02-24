@@ -66,10 +66,9 @@ public interface Leave
     * Retrieve the formInstance object contains some tags like return value <!-- begin-xdoclet-definition -->
     * @generated 
     * @param pDataSource ex:NaNaDS
-    * @param processSerialNumber
     * @param pFormInstance the DOM object contains ESSJBNXX005 tag
     * @return FormInstance this object appends some new tag with <pre>{@code <LevelValue id="LevelValue" dataType="java.lang.String">12</LevelValue> <Level1LeaderCode id="Level1LeaderCode" dataType="java.lang.String">T0001</Level1LeaderCode> <Level2LeaderCode id="Level2LeaderCode" dataType="java.lang.String">T0002</Level2LeaderCode> <DirInDir id="DirInDir" dataType="java.lang.String">Direct</DirInDir> <DeptDescribe id="DeptDescribe" dataType="java.lang.String">Dept Class</DeptDescribe> <DirectLeaderCodes id="DirectLeaderCodes" dataType="java.lang.String">T0001;T0002;T0003</DirectLeaderCodes> <OvertimeName id="OvertimeName" dataType="java.lang.String">Zhengku..</OvertimeName> <OvertimeHours id="OvertimeHours" dataType="java.lang.String">3..</OvertimeHours> <OvertimeReason id="OvertimeReason" dataType="java.lang.String">Reason1..</OvertimeReason> <ESSJBN015 id="ESSJBN015" dataType="java.lang.String">John, 0.5hrs, Reason:reason1</ESSJBN015> }</pre>    */
-   public com.dsc.nana.domain.form.FormInstance retrieveForOvertime( java.lang.String pDataSource,java.lang.String processSerialNumber,com.dsc.nana.domain.form.FormInstance formInstance )
+   public com.dsc.nana.domain.form.FormInstance retrieveForOvertime( java.lang.String pDataSource,com.dsc.nana.domain.form.FormInstance formInstance )
       throws java.rmi.RemoteException;
 
    /**
@@ -77,9 +76,8 @@ public interface Leave
     * @generated 
     * @param pDataSource ex:NaNaDS
     * @param xml
-    * @param processSerialNumber
     * @return OverTime    */
-   public com.gseo.zk.hr.model.OverTime retrieveForOvertime( java.lang.String pDataSource,java.lang.String xml,java.lang.String processSerialNumber )
+   public com.gseo.zk.hr.model.OverTime retrieveForOvertime( java.lang.String pDataSource,java.lang.String xml )
       throws java.rmi.RemoteException;
 
    /**

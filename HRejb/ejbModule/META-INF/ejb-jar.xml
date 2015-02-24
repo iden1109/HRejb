@@ -114,7 +114,6 @@
          <method-params>
             <method-param>java.lang.String</method-param>
             <method-param>java.lang.String</method-param>
-            <method-param>java.lang.String</method-param>
          </method-params>
       </method>
       <trans-attribute>Required</trans-attribute>
