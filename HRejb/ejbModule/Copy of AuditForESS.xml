@@ -1,0 +1,66 @@
+<Overtime>
+	<ESSJBN004 id="ESSJBN004" dataType="java.lang.String">T0313_Կ̡Գ</ESSJBN004>
+	<hfFillEmpID id="hfFillEmpID" dataType="java.lang.String">4269602a-62ca-463d-b054-056de1862ad0</hfFillEmpID>
+	<txtFillTime id="txtFillTime" dataType="java.lang.String">2015/3/30 16:40:27</txtFillTime>
+	<hfMainTableID id="hfMainTableID" dataType="java.lang.String">c133fa85-495d-41e2-8971-4486f32f5f91</hfMainTableID>
+	<ESSJBN006 id="ESSJBN006" dataType="java.lang.String">2015-02-16</ESSJBN006>
+	<ESSJBN007 id="ESSJBN007" dataType="java.lang.String">2015-03-30</ESSJBN007>
+	<ESSJBN008 id="ESSJBN008" dataType="java.lang.String">42</ESSJBN008>
+	<ESSJBN009 id="ESSJBN009" dataType="java.lang.String">TB110</ESSJBN009>
+	<ESSJBN010 id="ESSJBN010" dataType="java.lang.String">ݒɣܳȀޒ</ESSJBN010>
+	<rbAppAttri id="rbAppAttri" dataType="java.lang.String">0</rbAppAttri>
+	<DirectLeaderCodes id="DirectLeaderCodes" dataType="java.lang.String">T0557</DirectLeaderCodes>
+	<d01 id="d01">
+		<records>
+			<record id="d01_1">
+				<item id="AttendanceOTResultId" dataType="java.lang.String">b972cf94-7eb7-42ff-882c-cf6b3def9afc</item>
+				<item id="EmployeeId" dataType="java.lang.String">4269602A-62CA-463D-B054-056DE1862AD0</item>
+				<item id="ESSJBNXX005" dataType="java.lang.String">T0313</item>
+				<item id="ESSJBNXX006" dataType="java.lang.String">Կ̡Գ</item>
+				<item id="ShiftName" dataType="java.lang.String">0025(̄ԤƴɮҠũК)_ND1130</item>
+				<item id="AttendanceTypeId" dataType="java.lang.String">501</item>
+				<item id="ESSJBNXX022" dataType="java.lang.String">2015-02-16</item>
+				<item id="ESSJBNXX007" dataType="java.lang.String">2015-02-16</item>
+				<item id="StartDate" dataType="java.lang.String">2015/2/16 17:30:00</item>
+				<item id="EndDate" dataType="java.lang.String" perDataProId="">2015/2/16
+					19:32:00</item>
+				<item id="ESSJBNXX017" dataType="java.lang.String">17:30</item>
+				<item id="ESSJBNXX018" dataType="java.lang.String">19:32</item>
+				<item id="ESSJBNXX019" dataType="java.lang.String">1.5</item>
+				<item id="IfKouchu" dataType="java.lang.String">͏</item>
+				<item id="RestHours" dataType="java.lang.String">30</item>
+				<item id="ESSJBNXX026" dataType="java.lang.String">07:47 | 19:32</item>
+				<item id="ESSJBNXX021" dataType="java.lang.String">test</item>
+			</record>
+			<record id="d01_2">
+				<item id="AttendanceOTResultId" dataType="java.lang.String">e7c02215-ee02-4d8a-bdfe-1494a37f71c2</item>
+				<item id="EmployeeId" dataType="java.lang.String">DF3C0510-ABFA-4EC9-B51D-56CD380A77E9</item>
+				<item id="ESSJBNXX005" dataType="java.lang.String">T0512</item>
+				<item id="ESSJBNXX006" dataType="java.lang.String">ˌȓۨ</item>
+				<item id="ShiftName" dataType="java.lang.String">0028(̄ԤƴɮĤК)_NDF1630</item>
+				<item id="AttendanceTypeId" dataType="java.lang.String">501</item>
+				<item id="ESSJBNXX022" dataType="java.lang.String">2015-02-16</item>
+				<item id="ESSJBNXX007" dataType="java.lang.String">2015-02-17</item>
+				<item id="StartDate" dataType="java.lang.String">2015/2/17 1:00:00</item>
+				<item id="EndDate" dataType="java.lang.String" perDataProId="">2015/2/17
+					9:13:00</item>
+				<item id="ESSJBNXX017" dataType="java.lang.String">01:00</item>
+				<item id="ESSJBNXX018" dataType="java.lang.String">09:13</item>
+				<item id="ESSJBNXX019" dataType="java.lang.String">8</item>
+				<item id="IfKouchu" dataType="java.lang.String">͏</item>
+				<item id="RestHours" dataType="java.lang.String">0</item>
+				<item id="ESSJBNXX026" dataType="java.lang.String">16:09 | 09:13</item>
+				<item id="ESSJBNXX021" dataType="java.lang.String">test</item>
+			</record>
+		</records>
+	</d01>
+	<LevelValue id="LevelValue" dataType="java.lang.String">11000</LevelValue>
+	<DirectLeaderCodes id="DirectLeaderCodes" dataType="java.lang.String">T0557</DirectLeaderCodes>
+	<Level1LeaderCode id="Level1LeaderCode" dataType="java.lang.String">T0557</Level1LeaderCode>
+	<Level2LeaderCode id="Level2LeaderCode" dataType="java.lang.String">T0278</Level2LeaderCode>
+	<DirInDir id="DirInDir" dataType="java.lang.String">ʽѵ</DirInDir>
+	<DeptDescribe id="DeptDescribe" dataType="java.lang.String">ޒЅӡ˹</DeptDescribe>
+	<OvertimeName id="OvertimeName" dataType="java.lang.String">ˌȓۨ..</OvertimeName>
+	<OvertimeHours id="OvertimeHours" dataType="java.lang.String">8..</OvertimeHours>
+	<OvertimeReason id="OvertimeReason" dataType="java.lang.String">test..</OvertimeReason>
+</Overtime>

@@ -21,6 +21,7 @@ import org.junit.rules.ExpectedException;
 
 import com.gseo.zk.hr.Leave;
 import com.gseo.zk.hr.LeaveHome;
+import com.gseo.zk.hr.model.Assist;
 import com.gseo.zk.hr.model.OverTime;
 import com.gseo.zk.util.EJBFactory;
 
@@ -121,8 +122,9 @@ public class LeaveBeanUnitTest {
 	@Test
 	public void testRetrieveAssistant() {
 		try {
-			String result = bean.retrieveAssistant("HRMDS", "T0127");
-			assertEquals("Test testRetrieveAssistant() success", "T1319", result);
+			Assist ass = bean.retrieveAssistant("HRMDS", "T0056");
+			String result = ass.getAssist();
+			assertEquals("Test testRetrieveAssistant() success", "T0128", result);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}

@@ -103,7 +103,7 @@ public interface Leave
     * @generated 
     * @param pDataSource ex:HRMDS
     * @param pFormInstance provide the value of "ESSQJ008"
-    * @return FormInstance this object appends some new tag with <pre>{@code <Assistant id="Assistant" dataType="java.lang.String">T0001;T0002</Assistant> }</pre>    */
+    * @return FormInstance this object appends some new tag with <pre>{@code <Assistant id="Assistant" dataType="java.lang.String">T0001;T0002</Assistant> <Grade id="Grade" dataType="java.lang.String">0</Grade> }</pre>    */
    public com.dsc.nana.domain.form.FormInstance retrieveAssistant( java.lang.String pDataSource,com.dsc.nana.domain.form.FormInstance formInstance )
       throws java.rmi.RemoteException;
 
@@ -112,8 +112,8 @@ public interface Leave
     * @generated 
     * @param pDataSource ex:HRMDS
     * @param empId Employee ID
-    * @return assistants a string likes T0001;T0002    */
-   public java.lang.String retrieveAssistant( java.lang.String pDataSource,java.lang.String empId )
+    * @return Assist object    */
+   public com.gseo.zk.hr.model.Assist retrieveAssistant( java.lang.String pDataSource,java.lang.String empId )
       throws java.rmi.RemoteException;
 
 }

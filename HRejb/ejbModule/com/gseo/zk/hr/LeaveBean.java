@@ -23,6 +23,7 @@ import org.dom4j.Element;
 import com.dsc.nana.domain.form.FormInstance;
 import com.dsc.nana.util.logging.NaNaLog;
 import com.dsc.nana.util.logging.NaNaLogFactory;
+import com.gseo.zk.hr.model.Assist;
 import com.gseo.zk.hr.model.Employee;
 import com.gseo.zk.hr.model.Employees;
 import com.gseo.zk.hr.model.OverTime;
@@ -638,6 +639,7 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 * @return FormInstance  this object appends some new tag with 
 	 * <pre>{@code
 	 * <Assistant id="Assistant" dataType="java.lang.String">T0001;T0002</Assistant>
+	 * <Grade id="Grade" dataType="java.lang.String">0</Grade>
 	 * }</pre>
 	 */
 	public FormInstance retrieveAssistant(String pDataSource, FormInstance formInstance) {
@@ -654,9 +656,10 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 
 		Document doc = new XML(_log).getXMLDoc(formInstance.getFieldValues());
 		
-		String assis = retrieveAssistant(pDataSource, eid);
-		doc.getRootElement().addElement("Assistant").addAttribute("id", "Assistant").addAttribute("dataType", "java.lang.String").setText(assis);
-
+		Assist ass = retrieveAssistant(pDataSource, eid);
+		doc.getRootElement().addElement("Assistant").addAttribute("id", "Assistant").addAttribute("dataType", "java.lang.String").setText(ass.getAssist());
+		doc.getRootElement().addElement("Grade").addAttribute("id", "Grade").addAttribute("dataType", "java.lang.String").setText(ass.getGrade());
+		
 		_log.debug("return fieldValues: " + doc.asXML());
 		formInstance.setFieldValues(doc.asXML());
 		return formInstance;
@@ -671,9 +674,9 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 	 * 
 	 * @param pDataSource  ex:HRMDS
 	 * @param empId   Employee ID
-	 * @return assistants   a string likes T0001;T0002
+	 * @return Assist object
 	 */
-	public String retrieveAssistant(String pDataSource, String empId) {
+	public Assist retrieveAssistant(String pDataSource, String empId) {
 		if(pDataSource == null || pDataSource.equals("")){
 			throw new IllegalArgumentException("pDataSource cannot be empty !");
 		}
@@ -683,12 +686,13 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 		_log.debug("pDataSource: " + pDataSource);
 		_log.debug("empId: " + empId); 
 
-		String assis = "";
+		Assist ass = new Assist();
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
 			conn = _db.getJndiDataSource(pDataSource).getConnection();
-			assis = this.getAssistantFromHRM(conn, empId);
+			ass.setAssist(this.getAssistantFromHRM(conn, empId));
+			ass.setGrade(this.getGradeFromHRM(conn, empId));
 		}catch (SQLException e){
 			LogUtil.logError(_log, "Query DB fail.ErrMsg: " + e.getMessage());
 			throw new EJBException(e.getMessage());
@@ -697,7 +701,7 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 			_db.releasePrepareStatement(ps);
 			_db.releaseConn(conn);
 		}
-		return assis;
+		return ass;
 	}
 
 
@@ -1119,6 +1123,35 @@ public abstract class LeaveBean implements javax.ejb.SessionBean {
 			return assis2;
 		else
 			return "0";
+	}
+	
+	/**
+	 * Get the Grade of Employee
+	 * @param conn   Connection
+	 * @param eid   employee ID
+	 * @return grade
+	 * @throws SQLException
+	 */
+	private String getGradeFromHRM(Connection conn, String eid) throws SQLException {
+		String grade = "";
+		PreparedStatement ps = null;
+		try{
+			ResultSet rs;
+			ps = conn.prepareStatement("select Grade from employee where Code='"+eid+"' ");
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				grade = rs.getString("Grade") == null?"":rs.getString("Grade");
+			}
+		}catch (SQLException e){
+			LogUtil.logError(_log, "Query DB fail.ErrMsg: " + e.getMessage());
+			throw new EJBException(e.getMessage());
+		}finally{
+			_db.releasePrepareStatement(ps);
+		}
+		if(!grade.equals(""))
+			return grade;
+		
+		return "0";
 	}
 	
 	/**
